@@ -1,0 +1,16 @@
+{
+  "development": {
+    "config_id": "development",
+    "app_name": "Backend Hatchways",
+    "node_port": 3000,
+    "database": "postgres://intel:intel@localhost:5432/backend_hatchways"
+  },
+  "testing": {
+    "config_id": "testing"
+  },
+  "production": {
+    "config_id": "production",
+    "node_port": 8080,
+    "database": "postgres://intel:intel@localhost:5432/backend_hatchways"
+  }
+}
