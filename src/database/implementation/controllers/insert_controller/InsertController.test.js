@@ -1,7 +1,7 @@
 const expect = require('chai').expect
 const pgPromise = require('pg-promise')
 const Promise = require('bluebird')
-const DatabaseManager = require('@database/DatabaseManager.js')
+const DatabaseManager = require('@database/manager/DatabaseManager.js')
 const InsertController = require('./InsertController.js')
 
 describe('Insert controller integration', () => {
@@ -14,7 +14,7 @@ describe('Insert controller integration', () => {
     const databaseManager = new DatabaseManager(pgPromise, options)
     databaseManager.initializeConnectionWithCredentials(databaseCredentials)
   })
-  it('should insert dummy worker into database', async () => {
+  it('should insert row into database', async () => {
     const mockedName = 'mocked worker name'
     const mockedWorkerCompany = 'mocked worker company'
     const mockedEmail = 'mockedEmail@gmail.com'
@@ -27,7 +27,10 @@ describe('Insert controller integration', () => {
   })
 
   after('Close database connection', () => {
-    const databaseConnection = DatabaseManager.getDatabaseConnection()
-    databaseConnection.$pool.end()
+    try {
+      DatabaseManager.closeDatabaseConnection()
+    } catch(error) {
+      console.error(error.message)
+    }
   })
 })

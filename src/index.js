@@ -10,8 +10,9 @@ const cors = require('cors')
 const http = require('http')
 const pgPromise = require('pg-promise')
 
-const DatabaseManager = require('./database/DatabaseManager.js')
-const WorkerFactoryRouter = require('./routers/WorkerFactoryRouter.js')
+const DatabaseManager = require('./database/manager/DatabaseManager.js')
+const WorkerFactoryRouter = require('./routers/worker_factory_router/WorkerFactoryRouter.js')
+const WorkOrderFactoryRouter = require('./routers/work_order_factory_router/WorkOrderFactoryRouter.js')
 const Promise = require('bluebird')
 
 const app = express()
@@ -25,15 +26,14 @@ app.get('/work_orders/:worker?/:sorted?', (request, response) => {
 })
 
 app.use('/create_worker', WorkerFactoryRouter)
+app.use('/create_work_order', WorkOrderFactoryRouter)
 
 app.post('/delete_worker', (request, response) => {
-  
-})
 
-app.post('/create_work_order', (request, response) => {
-  
+    response.status(400).json({
+      response: 'Could not create work order at the moment, please try again'
+    })
 })
-
 app.post('/assign_work_order/:worker_id', (request, response) => {
   
 })

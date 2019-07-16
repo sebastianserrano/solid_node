@@ -9,7 +9,10 @@
   },
   "_moduleAliases": {
     "@root": ".",
-    "@database": "./src/database/"
+    "@database": "./src/database/",
+    "@factories": "./src/factories/",
+    "@models": "./src/models/",
+    "@utilities": "./src/utilities/"
   },
   "author": "Sebastian Serrano",
   "license": "ISC",
@@ -30,6 +33,8 @@
     "eslint-plugin-promise": "^4.2.1",
     "eslint-plugin-standard": "^4.0.0",
     "mocha": "^6.1.4",
-    "nodemon": "^1.19.1"
+    "nodemon": "^1.19.1",
+    "sinon": "^7.3.2",
+    "supertest": "^4.0.2"
   }
 }

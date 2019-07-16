@@ -1,11 +1,9 @@
 'use strict'
 
-class WorkOrder {
-  constructor (title, description, deadline) {
-    this.title = title
-    this.description = description
-    this.deadline = deadline
-  }
+const WorkOrder = {
+  title: '',
+  description: '',
+  deadline: new Date()
 }
 
 module.exports = WorkOrder

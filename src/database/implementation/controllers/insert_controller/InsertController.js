@@ -1,7 +1,7 @@
 'use strict'
 
 const Promise = require('bluebird')
-const DatabaseManager = require('@database/DatabaseManager.js')
+const DatabaseManager = require('@database/manager/DatabaseManager.js')
 
 class InsertController {
   constructor () {
