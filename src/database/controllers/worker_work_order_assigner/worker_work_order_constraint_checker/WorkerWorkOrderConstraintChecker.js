@@ -2,13 +2,11 @@ const DatabaseImplementation = require('@database/implementation/DatabaseImpleme
 
 class WorkerWorkOrderConstraintChecker {
   async validateCurrentNumberOfRowsWithWorkOrderTitle (workOrderTitle) {
-    try {
-      const currentNumberOfWorkersForWorkOrderId = await this.currentNumberOfRowsWithWorkOrderTitle(workOrderTitle)
-      const numberOfWorkers = Number(currentNumberOfWorkersForWorkOrderId[0].count) + 1
-      this.checkMaxWorkersPerWorkOrderConstraint(numberOfWorkers)
-    } catch (error) {
-      throw new Error('Max number of workers per work order constraint violated')
-    }
+    const currentNumberOfWorkersForWorkOrderId = await this.currentNumberOfRowsWithWorkOrderTitle(workOrderTitle)
+    const numberOfWorkers = Number(currentNumberOfWorkersForWorkOrderId[0].count)
+    this.checkMaxWorkersPerWorkOrderConstraint(numberOfWorkers)
+
+    return
   }
 
   checkMaxWorkersPerWorkOrderConstraint (numberOfWorkers) {
@@ -16,11 +14,11 @@ class WorkerWorkOrderConstraintChecker {
       return 
     }
 
-    throw new Error()
+    throw new Error('Max number of workers per work order constraint violated')
   }
 
   async currentNumberOfRowsWithWorkOrderTitle (workOrderTitle) {
-    const query = 'SELECT COUNT(*) FROM workers_orders where (work_order_title = $1)'
+    const query = 'SELECT COUNT(*) FROM workers_orders WHERE (work_order_title = $1)'
     const response = await DatabaseImplementation.select(query, [workOrderTitle])
 
     return response

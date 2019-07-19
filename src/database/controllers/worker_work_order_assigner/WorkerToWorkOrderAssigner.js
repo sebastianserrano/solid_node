@@ -1,5 +1,5 @@
 const DatabaseImplementation = require('@database/implementation/DatabaseImplementation.js')
-const WorkerWorkOrderConstraintChecker = require('./WorkerWorkOrderConstraintChecker.js')
+const WorkerWorkOrderConstraintChecker = require('./worker_work_order_constraint_checker/WorkerWorkOrderConstraintChecker.js')
 
 class WorkerToWorkOrderAssigner {
   constructor () {

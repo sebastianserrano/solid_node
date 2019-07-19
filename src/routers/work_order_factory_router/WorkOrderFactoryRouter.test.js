@@ -12,13 +12,13 @@ app.use('/create_work_order', WorkOrderFactoryRouter)
 
 let createWorkOrder;
 
-describe('Worker factory router', () => {
+describe('Worker order factory router', () => {
   before(() => {
     sandbox.stub(WorkOrderFactory, 'create')
     createWorkOrder = sandbox.stub(Database, 'createWorkOrder')
   })
 
-  it('should response with status 200 and correct headers upon creation of worker in database', done => {
+  it('should response with status 200 and correct headers upon creation of work order in database', done => {
     request(app)
       .post('/create_work_order')
       .send({

@@ -16,6 +16,7 @@ const DatabaseManager = require('./database/manager/DatabaseManager.js')
 const WorkerFactoryRouter = require('./routers/worker_factory_router/WorkerFactoryRouter.js')
 const WorkOrderFactoryRouter = require('./routers/work_order_factory_router/WorkOrderFactoryRouter.js')
 const AssignWorkOrderToWorkerRouter = require('./routers/assign_work_order_worker/AssignWorkOrderToWorkerRouter.js')
+const FetchWorkOrdersRouter = require('./routers/fetch_worker_orders_router/FetchWorkOrdersRouter.js')
 
 const app = express()
 const httpServer = http.createServer(app)
@@ -26,11 +27,8 @@ app.use(cors())
 app.use('/create_worker', WorkerFactoryRouter)
 app.use('/create_work_order', WorkOrderFactoryRouter)
 app.use('/assign_work_order', AssignWorkOrderToWorkerRouter)
-
+app.use('/work_orders', FetchWorkOrdersRouter)
 app.post('/delete_worker', (request, response) => {
-})
-app.get('/work_orders/:worker?/:sorted?', (request, response) => {
-  
 })
 
 httpServer.listen(PORT, () => {

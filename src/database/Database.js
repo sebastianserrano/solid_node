@@ -2,6 +2,7 @@
 
 const WorkerCreator = require('./controllers/WorkerCreator.js')
 const WorkOrderCreator = require('./controllers/WorkOrderCreator.js')
+const WorkOrdersRetriever = require('./controllers/WorkOrdersRetriever.js')
 const WorkerToWorkOrderAssigner = require('./controllers/worker_work_order_assigner/WorkerToWorkOrderAssigner.js')
 
 class Database {
@@ -22,6 +23,13 @@ class Database {
   static async assignWorkerToWorkOrderWithIds (workerName, workOrderTitle) {
     const workerToWorkOrderAssigner = new WorkerToWorkOrderAssigner()
     const response = await workerToWorkOrderAssigner.assignWithIds(workerName, workOrderTitle)
+
+    return response
+  }
+
+  static async fetchWorkOrdersFromWorkerWithName (workerName, sorting) {
+    const workOrdersRetriever = new WorkOrdersRetriever()
+    const response = await workOrdersRetriever.fetchWorkOrdersFromWorkerWithName(workerName, sorting)
 
     return response
   }
