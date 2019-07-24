@@ -35,7 +35,7 @@ In order to avoid such problems we can introduce an abstraction layer between hi
 
  High Level Classes --> Abstraction Layer --> Low Level Classes
 
-This can be seen with the Database class, which is an abstraction of the various methods available to the application supplied by the database framework which in this case is \'pg-promise\', sitting in the middle of a higher-level layer, the routers in this case, and the main component, index.js
+This can be seen with the Database class, which is an abstraction of the various methods available to the application supplied by the database framework which in this case is \'pg-promise\', sitting in the middle of a higher-level layer, the routers in this case, and the main component, index.js, the lowest-level layer
 
 ## Install
 
