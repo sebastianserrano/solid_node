@@ -31,7 +31,7 @@ Solid Node has the following routes:
 
 In a bad design the high level class uses directly and depends heavily on the low level classes. In such a case if we want to change the design to direct the output to a new FileWriter class we have to make changes in the Copy class. (Let's assume that it is a very complex class, with a lot of logic and really hard to test).
 
-In order to avoid such problems we can introduce an abstraction layer between high level classes and low level classes. Since the high level modules contain the complex logic they should not depend on the low level modules so the new abstraction layer should not be created based on low level modules. Low level modules are to be created based on the abstraction layer\'. The dependency inversion principle in summarized words says that there should be an abtraction layer between high level classes and low ones:
+In order to avoid such problems we can introduce an abstraction layer between high level classes and low level classes. Since the high level modules contain the complex logic they should not depend on the low level modules so the new abstraction layer should not be created based on low level modules. Low level modules are to be created based on the abstraction layer\'. The dependency inversion principle in summarized words says that there should be an abstraction layer between high level classes and low ones:
 
  High Level Classes --> Abstraction Layer --> Low Level Classes
 
