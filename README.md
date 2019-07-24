@@ -21,6 +21,10 @@ Solid Node has the following routes:
 
 \'In this context, a responsibility is considered to be one reason to change. This principle states that if we have 2 reasons to change for a class, we have to split the functionality in two classes. Each class will handle only one responsibility and if in the future we need to make one change we are going to make it in the class which handles it\'. A good example of this statement can be seen in classes contained under the factories folder. Each factory has one responsibility, to create a certain type of object, and only when this process changes for some reason, will this factory change as well.
 
+#### Open close principle
+
+\'This principle states that the design and writing of the code should be done in a way that new functionality should be added with minimum changes in the existing code. The design should be done in a way to allow the adding of new functionality as new classes, keeping as much as possible existing code unchanged\'. The database class is a good illustration of this principle, since for every new query the application has to make to the database will be added as another function inside this class that only extends its functionality, but does not change any existing ones.
+
 ## Install
 
 ```sh
