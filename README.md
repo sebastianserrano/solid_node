@@ -17,6 +17,10 @@ Solid Node has the following routes:
   - Specific worker
   - Sorted by deadline
 
+#### Single responsibility principle
+
+\'In this context, a responsibility is considered to be one reason to change. This principle states that if we have 2 reasons to change for a class, we have to split the functionality in two classes. Each class will handle only one responsibility and if in the future we need to make one change we are going to make it in the class which handles it\'. A good example of this statement can be seen in classes contained under the factories folder. Each factory has one responsibility, to create a certain type of object, and only when this process changes for some reason, will this factory change as well.
+
 ## Install
 
 ```sh
@@ -40,10 +44,3 @@ npm run test
 👤 **Sebastian Serrano**
 
 * Github: [@sebastianserrano](https://github.com/sebastianserrano)
-
-## Show your support
-
-Give a ⭐️ if this project helped you !
-
-***
-_This README was generated with ❤️ by [readme-md-generator](https://github.com/kefranabg/readme-md-generator)_
