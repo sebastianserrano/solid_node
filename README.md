@@ -25,6 +25,11 @@ Solid Node has the following routes:
 
 \'This principle states that the design and writing of the code should be done in a way that new functionality should be added with minimum changes in the existing code. The design should be done in a way to allow the adding of new functionality as new classes, keeping as much as possible existing code unchanged\'. The database class is a good illustration of this principle, since for every new query the application has to make to the database will be added as another function inside this class that only extends its functionality, but does not change any existing ones.
 
+#### Interface segregation principle
+
+\'The interface segregation principle states that clients should not be forced to implement interfaces they don't use. Instead of one fat interface many small interfaces are preferred based on groups of methods, each one serving one submodule\'. Because of javascripts nature of not having the ability to implement interfaces as in languages like java, this principle has to be incorporated with different techniques; one of those being duck-typing. \`Duck typing is a style of dynamic typing in which an object's current set of methods and properties determines the valid semantics, rather than its inheritance from a particular class or implementation of a specific interface\'.Again, an example of this can be seen in the DatabaseManager class, in which its various methods make it clear about it's responsibilities and semantics.
+
+
 #### Dependency inversion principle
 
 \'Let's take the classical example of a copy module which reads characters from the keyboard and writes them to the printer device. The high level class containing the logic is the Copy class. The low level classes are KeyboardReader and PrinterWriter.
