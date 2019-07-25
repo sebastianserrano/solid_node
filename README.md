@@ -60,7 +60,7 @@ npm run start
 npm run test
 ```
 
-#### Code Style
+## Code Style
 ```
 eslint-config-standard
 ```
